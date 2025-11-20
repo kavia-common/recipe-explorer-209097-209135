@@ -8,11 +8,12 @@ export default component$(() => {
       <div class="card">
         <h1 class="h1 m-0">Welcome to Recipe Explorer</h1>
         <p style={{ marginTop: "var(--space-4)", maxWidth: 720 }}>
-          Use the search bar above to find recipes by name, ingredient, or cuisine. This page will
-          display search results and featured recipes in a responsive grid.
+          Use the search bar above to find recipes by name, ingredient, or cuisine.
+          Explore all results on the Recipes page presented in a responsive grid of cards.
         </p>
-        <div style={{ marginTop: "var(--space-6)" }}>
-          <a class="btn btn-primary" href="/?q=pasta">Try “pasta”</a>
+        <div style={{ marginTop: "var(--space-6)", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+          <a class="btn btn-primary" href="/recipes">Browse Recipes</a>
+          <a class="btn btn-ghost" href="/recipes?q=pasta">Try “pasta”</a>
         </div>
       </div>
     </section>
