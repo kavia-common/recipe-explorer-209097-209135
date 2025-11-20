@@ -13,7 +13,7 @@ type TagPillsProps = {
 
 // PUBLIC_INTERFACE
 export const TagPills = component$<TagPillsProps>(({ tags, selected = [], onToggle$, maxVisible = 12 }) => {
-  if (!tags?.length) return null;
+  if (!tags.length) return null;
 
   const visible = tags.slice(0, maxVisible);
 

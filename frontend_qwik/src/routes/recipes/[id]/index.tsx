@@ -37,7 +37,7 @@ function timeBadge(title: string, value?: number) {
   );
 }
 
-function renderIngredient(item: string | Recipe["ingredients"][number]) {
+function renderIngredient(item: string | NonNullable<Recipe["ingredients"]>[number]) {
   if (typeof item === "string") {
     return <li>{item}</li>;
   }
@@ -227,14 +227,9 @@ export default component$(() => {
                   {sectionTitle("Ingredients")}
                   {Array.isArray(r.ingredients) && r.ingredients.length > 0 ? (
                     <ul class="ingredients">
-                      {(() => {
-                        const items: Array<string | NonNullable<Recipe["ingredients"]>[number]> = Array.isArray(r.ingredients)
-                          ? (r.ingredients as Array<string | NonNullable<Recipe["ingredients"]>[number]>)
-                          : [];
-                        return items.map((it, idx) => (
-                          <Fragment key={idx}>{renderIngredient(it)}</Fragment>
-                        ));
-                      })()}
+                      {r.ingredients.map((it, idx) => (
+                        <Fragment key={idx}>{renderIngredient(it as string | NonNullable<Recipe["ingredients"]>[number])}</Fragment>
+                      ))}
                     </ul>
                   ) : (
                     <p class="dim">No ingredients listed.</p>
