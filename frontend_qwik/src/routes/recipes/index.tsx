@@ -152,7 +152,14 @@ export default component$(() => {
           </>
         )}
         onRejected={(err) => (
-          <div class="card" role="alert" style={{ borderColor: "rgba(239,68,68,0.3)", borderWidth: "1px" }}>
+          <div
+            class="card"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            tabIndex={-1}
+            style={{ borderColor: "rgba(239,68,68,0.3)", borderWidth: "1px" }}
+          >
             <h2 class="h2 m-0" style={{ color: "var(--error)" }}>
               Failed to load recipes
             </h2>
@@ -185,7 +192,13 @@ export default component$(() => {
 
               {/* Empty state */}
               {items.length === 0 ? (
-                <div class="card" role="status">
+                <div
+                  class="card"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  tabIndex={-1}
+                >
                   <h2 class="h2 m-0">No recipes found</h2>
                   <p style={{ marginTop: "0.5rem" }}>
                     Try adjusting your search or removing some filters.

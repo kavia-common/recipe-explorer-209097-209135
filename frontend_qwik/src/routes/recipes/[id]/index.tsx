@@ -112,7 +112,14 @@ export default component$(() => {
           </>
         )}
         onRejected={(err: unknown) => (
-          <div class="card" role="alert" style={{ borderColor: "rgba(239,68,68,0.3)", borderWidth: "1px" }}>
+          <div
+            class="card"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            tabIndex={-1}
+            style={{ borderColor: "rgba(239,68,68,0.3)", borderWidth: "1px" }}
+          >
             <h2 class="h2 m-0" style={{ color: "var(--error)" }}>
               Failed to load recipe
             </h2>
@@ -128,7 +135,7 @@ export default component$(() => {
           const r = data?.data as Recipe;
           if (!r) {
             return (
-              <div class="card" role="status">
+              <div class="card" role="status" aria-live="polite" aria-atomic="true" tabIndex={-1}>
                 <h2 class="h2 m-0">Recipe not found</h2>
                 <p style={{ marginTop: "0.5rem" }}>The recipe you are looking for does not exist or was removed.</p>
                 <div style={{ marginTop: "var(--space-3)" }}>
