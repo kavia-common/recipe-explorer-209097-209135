@@ -1,0 +1,93 @@
+:root {
+  /* Color palette - Ocean Professional */
+  --primary: #2563EB;   /* Blue 600 */
+  --secondary: #F59E0B; /* Amber 500 */
+  --success: #F59E0B;   /* Using same as secondary per style guide */
+  --error: #EF4444;     /* Red 500 */
+
+  --background: #f9fafb; /* Neutral background */
+  --surface: #ffffff;    /* Card/Surface */
+  --text: #111827;       /* Gray 900 */
+
+  /* Gradient utility (from-blue-500/10 to-gray-50) */
+  --gradient-from: rgba(59, 130, 246, 0.1); /* blue-500 at 10% */
+  --gradient-to: #f9fafb;                   /* gray-50 close to bg */
+  --gradient: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 6px 16px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 12px 28px rgba(17, 24, 39, 0.12);
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition: 200ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  --transition-slow: 320ms cubic-bezier(0.2, 0.7, 0.3, 1);
+
+  /* Spacing scale (4px base) */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* Typography scale */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+
+  /* Borders */
+  --border: 1px solid rgba(17, 24, 39, 0.08);
+  --ring: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Gradient utility class */
+.bg-subtle-gradient {
+  background-image: var(--gradient);
+}
+
+/* Accent utility for text and borders */
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-error { color: var(--error); }
+
+/* Elevation helpers */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* Radius helpers */
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* Spacing helpers (small set for convenience) */
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+.m-0 { margin: 0; }
+.mt-4 { margin-top: var(--space-4); }
+.mb-4 { margin-bottom: var(--space-4); }
+
+/* Transition helpers */
+.transition { transition: all var(--transition); }
+.transition-fast { transition: all var(--transition-fast); }
